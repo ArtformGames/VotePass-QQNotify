@@ -1,15 +1,15 @@
 # VotePass-QQNotify
 
-为 **VotePass-Game** 支持**QQ群通知**，基于 [Mirai](https://docs.mirai.mamoe.net/) 机器人实现。
+为 **VotePass-Game** 支持**QQ群通知**，基于 [OneBot](https://onebot.dev/) 协议实现。
 
 ## 使用方法
 
 1. 由于本项目基于 **VotePass-Game** 开发，因此请确保您已经安装并配置好 **VotePass-Game** 插件。
-2. 请确保您已经安装并配置好 **Mirai** 机器人，并且已经安装并配置好 **mirai-api-http** 插件。
+2. 请确保您已经安装并配置好 **任一支持OneBot(HTTP协议)** 的机器人程序，并 **打开HTTP协议访问** 。
 3. 下载本项目的最新版本并放入您的 `plugins/` 文件夹。
 4. 加载插件或重启服务器，插件会自动生成配置文件。
-5. 修改配置文件中的机器人链接配置，以连接到您的**Mirai**机器人实例。
-6. 重载插件或重启服务器，插件会自动连接到您的**Mirai**机器人实例，您可以输入 `/VotePassQQNotify test` 来测试是否连接成功。
+5. 修改配置文件中的机器人链接配置，以连接到您的机器人实例。
+6. 重载插件或重启服务器，插件会自动连接到您的机器人实例，您可以输入 `/VotePassQQNotify test` 来测试是否连接成功。
 
 ## 项目依赖
 
@@ -19,11 +19,6 @@
 
 - **[必须]** 插件主体基于 [VotePass-Game](https://github.com/ArtformGames/VotePass/) 开发。
 - **[推荐]** 变量部分基于 [PlaceholderAPI](https://www.spigotmc.org/resources/6245/) 开发。
-
-### 机器人依赖
-
-- **[必须]** 机器人功能基于 [Mirai](https://docs.mirai.mamoe.net/) 实现。
-- **[必须]** 消息联动基于 [mirai-api-http](https://github.com/project-mirai/mirai-api-http) 插件实现。
 
 ## 指令
 
@@ -62,6 +57,7 @@
 
 [![bStats](https://bstats.org/signatures/bukkit/VotePass-QQNotify.svg)](https://bstats.org/plugin/bukkit/VotePass-QQNotify/22889)
 
+[![Alt](https://repobeats.axiom.co/api/embed/46f7c94970f9ff9dd305cdbedec40c0eef682cb1.svg "Analytics")](https://github.com/ArtformGames/VotePass-QQNotify/pulse)
 
 ## 开源协议
 
