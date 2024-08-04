@@ -2,6 +2,15 @@
 
 为 **VotePass-Game** 支持**QQ群通知**，基于 [Mirai](https://docs.mirai.mamoe.net/) 机器人实现。
 
+## 使用方法
+
+1. 由于本项目基于 **VotePass-Game** 开发，因此请确保您已经安装并配置好 **VotePass-Game** 插件。
+2. 请确保您已经安装并配置好 **Mirai** 机器人，并且已经安装并配置好 **mirai-api-http** 插件。
+3. 下载本项目的最新版本并放入您的 `plugins/` 文件夹。
+4. 加载插件或重启服务器，插件会自动生成配置文件。
+5. 修改配置文件中的机器人链接配置，以连接到您的**Mirai**机器人实例。
+6. 重载插件或重启服务器，插件会自动连接到您的**Mirai**机器人实例，您可以输入 `/VotePassQQNotify test` 来测试是否连接成功。
+
 ## 项目依赖
 
 关于开发过程中使用的所有依赖项，请移步 [Dependencies](https://github.com/ArtformGames/VotePass-QQNotify/network/dependencies) 。
