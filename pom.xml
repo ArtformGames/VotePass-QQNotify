@@ -20,7 +20,7 @@
     <version>1.0.1</version>
 
     <name>VotePass-QQNotify</name>
-    <description>为VotePass提供QQ消息支持，基于 mirai-http 实现。</description>
+    <description>为VotePass提供QQ消息支持，基于 OneBot 实现。</description>
     <url>https://github.com/ArtformGames/VotePass-QQNotify</url>
 
     <developers>
@@ -119,11 +119,21 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>cc.carm.lib</groupId>
             <artifactId>githubreleases4j</artifactId>
             <version>1.3.2</version>
             <scope>compile</scope>
+        </dependency>
+
+        <!--suppress VulnerableLibrariesLocal -->
+        <dependency>
+            <groupId>cc.carm.lib</groupId>
+            <artifactId>easyplugin-githubchecker</artifactId>
+            <version>${deps.easyplugin.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
         </dependency>
 
         <dependency>

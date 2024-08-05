@@ -2,22 +2,19 @@ package com.artformgames.plugin.votepass.addon.qqnotify;
 
 import cc.carm.lib.easyplugin.EasyPlugin;
 import cc.carm.lib.easyplugin.i18n.EasyPluginMessageProvider;
-import cc.carm.lib.easyplugin.utils.JarResourceUtils;
+import cc.carm.lib.easyplugin.updatechecker.GHUpdateChecker;
 import cc.carm.lib.mineconfiguration.bukkit.MineConfiguration;
 import com.artformgames.plugin.votepass.addon.qqnotify.command.AdminCommands;
 import com.artformgames.plugin.votepass.addon.qqnotify.conf.PluginConfig;
 import com.artformgames.plugin.votepass.addon.qqnotify.conf.PluginMessages;
-import com.artformgames.plugin.votepass.addon.qqnotify.util.GHUpdateChecker;
+import com.artformgames.plugin.votepass.addon.qqnotify.listener.RequestListener;
 import org.bstats.bukkit.Metrics;
-
-import java.io.File;
-import java.io.IOException;
 
 public class Main extends EasyPlugin {
     private static Main instance;
 
     public Main() {
-        super(EasyPluginMessageProvider.EN_US);
+        super(EasyPluginMessageProvider.ZH_CN);
         Main.instance = this;
     }
 
@@ -26,16 +23,7 @@ public class Main extends EasyPlugin {
     @Override
     protected void load() {
 
-        File configFile = new File(getDataFolder(), "config.yml");
-        if (!configFile.exists()) {
-            try {
-                JarResourceUtils.copyFolderFromJar("mail", getDataFolder(), JarResourceUtils.CopyOption.COPY_IF_NOT_EXIST);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        log("Loading plugin configurations...");
+        log("加载插件配置...");
         this.configuration = new MineConfiguration(this);
         this.configuration.initializeConfig(PluginConfig.class);
         this.configuration.initializeMessage(PluginMessages.class);
@@ -45,21 +33,22 @@ public class Main extends EasyPlugin {
     @Override
     protected boolean initialize() {
 
-        log("Register listeners...");
+        log("注册监听器...");
+        registerListener(new RequestListener());
 
-        log("Register commands...");
+        log("注册指令...");
         registerCommand("VotePassQQNotify", new AdminCommands(this));
 
         if (PluginConfig.METRICS.getNotNull()) {
-            log("Initializing bStats...");
+            log("启用统计数据...");
             new Metrics(this, 21159);
         }
 
         if (PluginConfig.CHECK_UPDATE.getNotNull()) {
-            log("Start to check the plugin versions...");
+            log("开始检查更新...");
             getScheduler().runAsync(GHUpdateChecker.runner(this));
         } else {
-            log("Version checker is disabled, skipped.");
+            log("已禁用检查更新，跳过。");
         }
 
         return true;

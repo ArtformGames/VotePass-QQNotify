@@ -47,6 +47,10 @@ public interface PluginMessages extends Configuration {
 
     interface TEST extends Configuration {
 
+        ConfiguredMessageList<String> START = ConfiguredMessageList.asStrings()
+                .defaults("&f已尝试发送测试消息到 &e%(group) &f，请在群中查看消息是否发送成功。")
+                .params("group")
+                .build();
 
     }
 
