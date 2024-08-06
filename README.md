@@ -1,10 +1,10 @@
 # VotePass-QQNotify
 
-为 **VotePass-Game** 支持**QQ群通知**，基于 [OneBot](https://onebot.dev/) 协议实现。
+为 **VotePass-Lobby** 支持**QQ群通知**，基于 [OneBot](https://onebot.dev/) 协议实现。
 
 ## 使用方法
 
-1. 由于本项目基于 **VotePass-Game** 开发，因此请确保您已经安装并配置好 **VotePass-Game** 插件。
+1. 由于本项目基于 **VotePass-Lobby** 开发，因此请确保您已经安装并配置好 **VotePass-Lobby** 插件。
 2. 请确保您已经安装并配置好 **任一基于OneBot协议** 的机器人程序，并 **打开HTTP访问** 。
 3. 下载本项目的最新版本并放入您的 `plugins/` 文件夹。
 4. 加载插件或重启服务器，插件会自动生成配置文件。
@@ -17,7 +17,7 @@
 
 ### 插件依赖
 
-- **[必须]** 插件主体基于 [VotePass-Game](https://github.com/ArtformGames/VotePass/) 开发。
+- **[必须]** 插件主体基于 [VotePass-Lobby](https://github.com/ArtformGames/VotePass/) 开发。
 - **[推荐]** 变量部分基于 [PlaceholderAPI](https://www.spigotmc.org/resources/6245/) 开发。
 
 ## 指令
@@ -38,11 +38,11 @@
 
 ## 配置文件
 
-### 基础配置文件 ([`config.yml`](src/main/java/cc/carm/plugin/userprefix/conf/PluginConfig.java))
+### 基础配置文件 (config.yml)
 
 将会在服务器首次启动时生成，如果您想要修改配置，请在服务器启动后打开配置文件。
 
-### 消息配置文件 ([`messages.yml`](src/main/java/cc/carm/plugin/userprefix/conf/PluginMessages.java))
+### 消息配置文件 (messages.yml)
 
 将会在服务器首次启动时生成，如果您想要修改配置，请在服务器启动后打开配置文件 。
 

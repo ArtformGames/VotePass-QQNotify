@@ -33,7 +33,7 @@ public interface PluginConfig extends Configuration {
     interface BOT extends Configuration {
 
         @HeaderComment("OneBot 机器人的 HTTP API 请求地址")
-        ConfiguredValue<String> URL = ConfiguredValue.of("http://127.0.0.1:5700/");
+        ConfiguredValue<String> URL = ConfiguredValue.of("http://localhost:5700/");
 
         @HeaderComment("通知的群号列表，用于发送通知。请确保机器人在这些群中。")
         ConfiguredList<Long> GROUPS = ConfiguredList.builderOf(Long.class).fromString()
@@ -54,7 +54,7 @@ public interface PluginConfig extends Configuration {
 
         ConfiguredMessageList<String> NEW_REQUEST = ConfiguredMessageList.asStrings()
                 .defaults(
-                        "有一位新玩家 %(player) 刚刚提交了对 %(server) 服务器的白名单请求，",
+                        "新玩家 %(player) 刚刚提交了对 %(server) 服务器的白名单请求，",
                         "赶快加入服务器参与白名单审核投票叭~"
                 ).params("player", "server")
                 .build();

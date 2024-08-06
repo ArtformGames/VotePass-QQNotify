@@ -17,7 +17,7 @@
     </properties>
     <groupId>com.artformgames</groupId>
     <artifactId>votepass-qqnotify</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
 
     <name>VotePass-QQNotify</name>
     <description>为VotePass提供QQ消息支持，基于 OneBot 实现。</description>
@@ -74,6 +74,16 @@
         </repository>
 
         <repository>
+            <id>minebench-repo</id>
+            <url>https://repo.minebench.de/</url>
+        </repository>
+
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
+
+        <repository>
             <id>codecrafter47-repo</id>
             <url>https://nexus.codecrafter47.de/content/repositories/public/</url>
         </repository>
@@ -89,11 +99,6 @@
             <url>https://maven.pkg.github.com/ArtformGames/VotePass</url>
         </repository>
 
-        <repository>
-            <id>carm-repo</id>
-            <url>https://repo.carm.cc/repository/maven-public/</url>
-        </repository>
-
     </repositories>
 
     <dependencies>
@@ -107,8 +112,8 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>votepass-game-api</artifactId>
-            <version>[1.4.0,)</version>
+            <artifactId>votepass-lobby-api</artifactId>
+            <version>[1.4.3,)</version>
             <scope>provided</scope>
         </dependency>
 
@@ -258,6 +263,7 @@
                     <finalName>${project.name}-${project.version}</finalName>
                     <outputDirectory>${project.basedir}/.asset/</outputDirectory>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <minimizeJar>true</minimizeJar>
                     <relocations>
                         <relocation>
                             <pattern>cc.carm.lib</pattern>
@@ -270,6 +276,10 @@
                         <relocation>
                             <pattern>com.cryptomorin.xseries</pattern>
                             <shadedPattern>${project.package}.lib.xseries</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.json</pattern>
+                            <shadedPattern>${project.package}.lib.json</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>

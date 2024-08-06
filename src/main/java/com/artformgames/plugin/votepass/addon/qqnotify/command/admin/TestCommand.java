@@ -6,7 +6,6 @@ import com.artformgames.plugin.votepass.addon.qqnotify.command.AdminCommands;
 import com.artformgames.plugin.votepass.addon.qqnotify.conf.PluginConfig;
 import com.artformgames.plugin.votepass.addon.qqnotify.conf.PluginMessages;
 import com.artformgames.plugin.votepass.addon.qqnotify.manager.BotHandler;
-import com.artformgames.plugin.votepass.game.VotePassServerAPI;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
@@ -23,12 +22,14 @@ public class TestCommand extends SubCommand<AdminCommands> {
     public Void execute(JavaPlugin plugin, CommandSender sender, String[] args) throws Exception {
 
         String name = args.length > 0 ? args[0] : sender.getName();
-        var message = PluginConfig.NOTIFICATION.NEW_REQUEST.parse(sender, name, VotePassServerAPI.getServerID());
+        var message = PluginConfig.NOTIFICATION.NEW_REQUEST.parse(sender, name, "TESTING");
         for (Long group : PluginConfig.BOT.GROUPS) {
             PluginMessages.TEST.START.send(sender, group);
-            BotHandler.sendGroupMessage(group, message);
+            BotHandler.sendMessage(true, group, message).exceptionally(e -> {
+                e.printStackTrace();
+                return null;
+            });
         }
-
         return null;
     }
 
