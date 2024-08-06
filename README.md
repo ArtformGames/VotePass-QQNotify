@@ -1,6 +1,7 @@
 # VotePass-QQNotify
 
-为 **VotePass-Lobby** 支持**QQ群通知**，基于 [OneBot](https://onebot.dev/) 协议实现。
+为 **VotePass-Lobby** 支持**QQ群通知** 以便于唤起更多玩家参与白名单投票 ，
+基于 [OneBot](https://onebot.dev/) 协议实现。
 
 ## 使用方法
 
