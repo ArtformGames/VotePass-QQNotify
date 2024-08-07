@@ -20,11 +20,6 @@ public interface PluginMessages extends Configuration {
                 .defaults("&c&lSorry! &fBut you dont have enough permissions to do that!")
                 .build();
 
-
-        ConfiguredMessageList<String> ONLY_PLAYER = ConfiguredMessageList.asStrings()
-                .defaults("&c&lSorry! &fBut this command only can be executed by a player!")
-                .build();
-
     }
 
     interface RELOAD extends Configuration {

@@ -6,11 +6,7 @@ import cc.carm.lib.configuration.core.value.type.ConfiguredList;
 import cc.carm.lib.configuration.core.value.type.ConfiguredValue;
 import cc.carm.lib.mineconfiguration.bukkit.value.ConfiguredMessageList;
 
-import java.time.format.DateTimeFormatter;
-
 public interface PluginConfig extends Configuration {
-
-    DateTimeFormatter DATETIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     ConfiguredValue<Boolean> DEBUG = ConfiguredValue.of(Boolean.class, false);
 

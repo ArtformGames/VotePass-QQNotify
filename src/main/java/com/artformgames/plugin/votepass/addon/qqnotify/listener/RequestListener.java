@@ -1,8 +1,6 @@
 package com.artformgames.plugin.votepass.addon.qqnotify.listener;
 
-import com.artformgames.plugin.votepass.addon.qqnotify.Main;
 import com.artformgames.plugin.votepass.addon.qqnotify.conf.PluginConfig;
-import com.artformgames.plugin.votepass.addon.qqnotify.conf.PluginMessages;
 import com.artformgames.plugin.votepass.addon.qqnotify.manager.BotHandler;
 import com.artformgames.plugin.votepass.lobby.VotePassLobbyAPI;
 import com.artformgames.plugin.votepass.lobby.api.data.server.ServerSettings;
