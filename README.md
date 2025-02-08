@@ -88,7 +88,7 @@
 
 本项目由 [Artfrom Games](https://github.com/ArtformGames/) 团队提供长期支持与维护。
 
-<img src="https://raw.githubusercontent.com/ArtformGames/.github/master/logo/1000pxh/COMPLETE_Reverse_Color.png" width="50%"  height="50%" alt="ArtformGames Logo">
+<img src="https://raw.githubusercontent.com/ArtformGames/.github/master/logo/logo_full.png" width="30%"  height="30%" alt="ArtformGames Logo">
 
 Many thanks to Jetbrains for kindly providing a license for us to work on this and other open-source projects.
 
